@@ -1,0 +1,388 @@
+<html>
+    <head>
+        <title>CSS Properties</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>CSS Properties</h2><br><br>
+            <h3>Properties</h3>
+            <p>A style sheet is developed by specifying the style definitons, which specifies the formatting characteristics or properties of an element.</p>
+            <p>The style properties can be:</p>
+            <ul style="margin-left: 2%">
+                <li>Font Properties</li>
+                <li>Text Properties</li>
+                <li>Background Properties</li>
+                <li>Margin Properties</li>
+                <li>Padding Properties</li>
+                <li>Border Properties</li>
+            </ul><br>
+            <h3>Font Properties</h3>
+            <p>CSS font properties define font in text. The Font properties allwo the user to change font family,boldness,size and the style of the text.</p>
+            <p>Font properties include:</p>
+            <table border=1 style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: center; width: 75pt;">Property</th>
+                    <th style="text-align: center; width: 85pt;">Values</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">font</td>
+                    <td style="padding-left:2px;">font-style<br>font-varient<br>font-weight<br>font-size<br>font-family</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">font-family</td>
+                    <td style="padding-left:2px;">family-name<br>generic-family</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">font-size</td>
+                    <td style="padding-left:2px;">xx-small<br>x-small<br>small<br>medium<br>large<br>x-large<br>xx-large<br>smaller<br>larger<br>length<br>%<br></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">font-style</td>
+                    <td style="padding-left:2px;">normal<br>italic<br>oblique</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">font-variant</td>
+                    <td style="padding-left:2px;">normal<br>small-caps</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">Font-weight</td>
+                    <td style="padding-left:2px;">normal<br>bold<br>bolder<br>lighter<br>100-900</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/CSS/Properties/1.txt" style="width:100%; height: 264.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/CSS/Properties/1.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Text Properties</h3>
+            <p>CSS text properties allows user to control the appearance of displayed text.</p>
+            <p>Text properties include:</p>
+            <table border=1 style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: center; width: 80pt;">Property</th>
+                    <th style="text-align: center; width: 85pt;">Values</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">Color</td>
+                    <td style="padding-left:2px;">color-rgb<br>color-hex<br>color-name<br>transparent</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">letter-spacing</td>
+                    <td style="padding-left:2px;">normal<br>length</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">text-align</td>
+                    <td style="padding-left:2px;">left<br>right<br>center<br>justify<br></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">text-decoration</td>
+                    <td style="padding-left:2px;">none<br>underline<br>overline<br>line-through<br>blink</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">text-indent</td>
+                    <td style="padding-left:2px;">length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">text-transform</td>
+                    <td style="padding-left:2px;">none<br>capitalize<br>uppercase<br>lowercase</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">vertical-align</td>
+                    <td style="padding-left:2px;">baseline<br>sub<br>super<br>top<br>text-top<br>middle<br>bottom<br>text-bottom<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">word-spacing</td>
+                    <td style="padding-left:2px;">normal<br>length</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/CSS/Properties/2.txt" style="width:100%; height: 264.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/CSS/Properties/2.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Background Properties</h3>
+            <p>CSS Background properties define the background effects of an element.</p>
+            <p>The background properties allows one to control the background color of an element, set an image as the background, repeat a background image vertically or horizontally, and position an image on a page.</p>
+            <p>Background properties include:</p>
+            <table border=1 style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: center; width: 125pt;">Property</th>
+                    <th style="text-align: center; width: 125pt;">Values</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">background</td>
+                    <td style="padding-left:2px;">background-color<br>background-image<br>background-repeat<br>background-attachment</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">background-attachment</td>
+                    <td style="padding-left:2px;">scroll<br>fixed</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">background-color</td>
+                    <td style="padding-left:2px;">color-rgb<br>color-hex<br>color-name<br>transparent</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">background-image</td>
+                    <td style="padding-left:2px;">url<br>none</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">background-repeat</td>
+                    <td style="padding-left:2px;">repeat<br>repeat-x<br>repeat-y<br>no-repeat</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/CSS/Properties/3.txt" style="width:100%; height: 129.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/CSS/Properties/3.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Margin Properties</h3>
+            <p>The margin properties define the space around elements.</p>
+            <p>It is posssible to use negative values to overlap content.</p>
+            <p>Margin properties include:</p>
+            <table border=1 style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: center; width: 80pt;">Property</th>
+                    <th style="text-align: center; width: 85pt;">Values</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">margin</td>
+                    <td style="padding-left:2px;">margin-top<br>margin-right<br>margin-bottom<br>margin-left</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">margin-top</td>
+                    <td style="padding-left:2px;">auto<br>length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">margin-right</td>
+                    <td style="padding-left:2px;">auto<br>length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">margin-bottom</td>
+                    <td style="padding-left:2px;">auto<br>length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">margin-left</td>
+                    <td style="padding-left:2px;">auto<br>length<br>%</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/CSS/Properties/4.txt" style="width:100%; height: 204.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/CSS/Properties/4.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Padding Properties</h3>
+            <p>The padding properties define the space between the element border and the element content. This property does not allow negative values.</p>
+            <p>Padding properties include:</p>
+            <table border=1 style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: center; width: 80pt;">Property</th>
+                    <th style="text-align: center; width: 85pt;">Values</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">padding</td>
+                    <td style="padding-left:2px;">length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">padding-top</td>
+                    <td style="padding-left:2px;">length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">padding-right</td>
+                    <td style="padding-left:2px;">length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">padding-bottom</td>
+                    <td style="padding-left:2px;">length<br>%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">padding-left</td>
+                    <td style="padding-left:2px;">length<br>%</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/CSS/Properties/5.txt" style="width:100%; height: 249.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/CSS/Properties/5.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Border Properties</h3>
+            <p>CSS border properties define the borders around an element. These properties allow the user to specify the style, color and width of an element's border.</p>
+            <p>Border properties include:</p>
+            <table border=1 style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: center; width: 80pt;">Property</th>
+                    <th style="text-align: center; width: 85pt;">Values</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border</td>
+                    <td style="padding-left:2px;">border-width<br>border-style<br>border-color</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border-top</td>
+                    <td style="padding-left:2px;">border-width<br>border-style<br>border-color</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border-right</td>
+                    <td style="padding-left:2px;">border-width<br>border-style<br>border-color</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border-bottom</td>
+                    <td style="padding-left:2px;">border-width<br>border-style<br>border-color</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border-left</td>
+                    <td style="padding-left:2px;">border-width<br>border-style<br>border-color</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border-color</td>
+                    <td style="padding-left:2px;">color</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border-style</td>
+                    <td style="padding-left:2px;">none<br>hidden<br>dotted<br>dashed<br>solid<br>double<br>groove<br>ridge<br>inset<br>outset</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">border-width</td>
+                    <td style="padding-left:2px;">thin<br>medium<br>thick<br>length</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/CSS/Properties/6.txt" style="width:100%; height: 144.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/CSS/Properties/6.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>

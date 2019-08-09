@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <title>HTML</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>HTML</h2><br><br>
+            <p><b>Hypertext Markup Language (HTML) </b> is the standard markup language for creating web pages and web applications. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p><br>
+            <h3>HTML ELEMENTS</h3>
+            <p>HTML elements are the building blocks of HTML pages. They provide a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. Tags such as &lt; p &gt; .... &lt;/p&gt; surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags, but use them to interpret the content of the page.</p><br>
+            <h3>Development OF HTML</h3>          
+            <p>In 1980, physicist Tim Berners-Lee, a contractor at CERN, proposed and prototyped ENQUIRE, a system for CERN researchers to use and share documents. In 1989, Berners-Lee wrote a memo proposing an Internet-based hypertext system. Berners-Lee specified HTML and wrote the browser and server software in late 1990. The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet by Tim Berners-Lee in late 1991. It describes 18 elements comprising the initial, relatively simple design of HTML. Except for the hyperlink tag, these were strongly influenced by SGMLguid, an in-house Standard Generalized Markup Language (SGML)-based documentation format at CERN. Eleven of these elements still exist in HTML 4</p>
+            <p>After the HTML and HTML+ drafts expired in early 1994, the IETF created an HTML Working Group, which in 1995 completed "HTML 2.0". Since 1996, the HTML specifications have been maintained by the World Wide Web Consortium (W3C). In 2000, HTML also became an international standard.</p><br>
+            <h3>Evolution of HTML</h3>
+            <table border=1 style="border-collapse: collapse;">
+                <tr>
+                    <th style="width:50px;">Year</th>
+                </tr>
+                <tr>
+                    <td align="center">1990</td>
+                    <td>It included only the basic structural elements. It assumed all the browsers supported all the features.</td>
+                </tr>
+                <tr>
+                    <td align="center">1991</td>
+                    <td>A prototype text interface was developed. It supported advanced features including highlighted text and graphics, depending on browser's capability.</td>
+                </tr>
+                <tr>
+                    <td align="center">1993</td>
+                    <td>The unofficial newer version HTML+ was developed. It featured tables and introduced the World Wide Web as an interactive medium through the usage of forms.</td>
+                </tr>
+                <tr>
+                    <td align="center">1994</td>
+                    <td>HTML2.0 was developed and implemented as a formal standardized specifications.</td>
+                </tr>
+                <tr>
+                    <td align="center">1995</td>
+                    <td>HTML3.0 was not an official standard but included many new code tags, mat tags, and new features for text formatting.</td>
+                </tr>
+                <tr>
+                    <td align="center">1996</td>
+                    <td>HTML3.2 version was incorporated many of Netscape's browser extensions.</td>
+                </tr>
+            </table><br>
+            <h3>MARKUP</h3>
+            <p>HTML markup consists of several key components, including those called tags, character-based data types, character references and entity references. HTML tags most commonly come in pairs like &lt;h1&gt; and &lt;/h1&gt;, although some represent empty elements and so are unpaired, for example &lt;img&gt;. The first tag in such a pair is the start tag, and the second is the end tag. Another important component is the HTML document type declaration, which triggers standards mode rendering.</p><br>
+            <h3>Elements</h3>
+            <p>HTML documents imply a structure of nested HTML elements. These are indicated in the document by HTML tags, enclosed in angle brackets.<br>Tags may also enclose further tag markup between the start and end, including a mixture of tags and text. This indicates further elements as children of the parent element.<br>The start tag may also include attributes within the tag. These indicate other information, such as identifiers for sections within the document, identifiers used to bind style information to the presentation of the document, and for some tags such as the &lt;img&gt; used to embed images, the reference to the image resource.<br>Some elements, such as the line break &lt;br&gt;, do not permit any embedded content, either text or further tags. These require only a single empty tag.<br>The general form of an HTML element is therefore: &lt;tag attribute1="value1" attribute2="value2"&gt;content&lt;/tag&gt;. Some HTML elements are defined as empty elements. The name of an HTML element is the name used in the tags. If attributes are not mentioned, default values are used in each case.
+        </div>
+    </body>
+</html>

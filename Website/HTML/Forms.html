@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <title>HTML Forms</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>HTML Forms</h2><br><br>
+            <h3>HTML Form Element</h3>
+            <p>The HTML &lt;form&gt; element defines a form that is used to collect user input.</p>
+            <p>The form element provides three tags to create interface elements:</p><ul style="margin-left: 2%">
+            <li>&lt;INPUT&gt;</li>
+            <li>&lt;TEXTAREA&gt;</li>
+            <li>&lt;SELECT&gt;</li></ul><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/HTML/Forms/1.txt" style="width:100%; height: 174.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/HTML/Forms/1.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>&lt;Input&gt; Tag</h3>
+            <p>The input tag is used to tell the browser where user input will occur.</p>
+            <p>It specifies most of the elements of a form.</p>
+            <p>The input tag has three main attributes - type, name and value.</p>
+            <p>The type attribute defines the type of input that is required from the user and creates the following interface elements:</p><ul style="margin-left: 2%">
+            <li>Text Field</li>
+            <li>Password Field</li>
+            <li>Radio Button</li>
+            <li>Check Box</li>
+            <li>Submit Button</li>
+            <li>Reset Button</li>
+            <li>Image Button</li>
+            <li>Simple Button</li>
+            <li>File Field</li>
+            <li>Hidden Field</li>
+            </ul>
+            <p>The name attribute is used to provide each element a specific name which can be used to identify the field by scripts.</p>
+            <p>The value attribute is used to declare the default value of input field and the text to be displayed on a button.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/HTML/Forms/2.txt" style="width:100%; height: 309.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/HTML/Forms/2.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>&lt;Textarea&gt; Tag</h3>
+            <p>Textarea fields are expanded text fields which can span multiple lines and is used for accepting multi-line input from the user.</p>
+            <p>Unlike most form fields, textareas are defined using &lt;textarea&gt; tag instead of &lt;input&gt; tag.</p>
+            <p>The &lt;Textarea&gt; tag is a container tag and the text written between &lt;Textarea&gt; and &lt;/Textarea&gt; tags is presented in the textarea box.</p>
+            <p>Scrollbars in a textarea are automatically when visible when input exceeds the visual number of columns or rows specified.</p>
+            <p>The &lt;Textarea&gt; tag has four attributes:</p><ul style="margin-left: 2%">
+            <li>Name - It specifies the name of the textarea</li>
+            <li>Cols - It is used to specify how many characters wide the textarea will be.</li>
+            <li>Rows - It specifies how many visible lines are there in the textarea input.</li>
+            <li>Wrap - It specifies what to do when lines are longer than the width of the textarea.</li>
+            </ul>
+            <p></p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/HTML/Forms/3.txt" style="width:100%; height: 174.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/HTML/Forms/3.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>&lt;Select&gt; Tag</h3>
+            <p>The &lt;Select&gt; tag is used to construct drop-down menus and scrolling-list boxes.</p>
+            <p>Drop-down menus can act as both radio button and check box, depending on the attribute values.</p>
+            <p>The advantage of drop-down menu over a raio button or a check box is that it occupies less space as compared to the other two.</p>
+            <p>The &lt;option&gt; tag is used to specify each item to be displayed in the menu.</p>
+            <p>The value of the option selected is sent to the server when the form is submitted.</p>
+            <p>The select tag has three attributes:</p><ul style="margin-left: 2%">
+            <li>Name - It specifies the name name of the drop-down menu.</li>
+            <li>Size - It specifies the number of options visible in a scrolling-list box. If this attribute is not used, a drop-down menu is created.</li>
+            <li>Multiple - It is used to specify that multiple options can be selected using Ctrl Key and is only aapplicable in scolling-lists.</li>
+            </ul>
+            <p>The &lt;option&gt; tag has two attributes:</p><ul style="margin-left: 2%">
+            <li>Value - It specifies the text to be sent to server if the option is selected.</li>
+            <li>Selected - It specifies default selection to be displayed on page load.</li>
+            </ul><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/HTML/Forms/4.txt" style="width:100%; height: 174.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/HTML/Forms/4.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>

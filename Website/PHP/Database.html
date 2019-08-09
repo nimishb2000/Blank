@@ -1,0 +1,297 @@
+<html>
+    <head>
+        <title>Database Linking</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>Database Linking</h2><br><br>
+            <h3>MySQL Database</h3>
+            <p>PHP supports many databases likr MS Access, Oracle, DB2. However, the most popular database system used with PHP is MySQL.</p>
+            <p>MySQL is an open-source, multiuser and multithreaded database management system owned by Oracle. This database is available on most OS platforms.</p>
+            <p>PHP5 scripts can work with a MySQL database using the <b>MySQLi</b> extension or the <b>PDO</b> (PHP Data Objects).</p>
+            <p>While PDO is capable of working with 12 different database systems, MySQLi works only with MySQL databases. Earlier versions of PHP used the MySQL extension with was deprecated in 2012.</p><br>
+            <h3>Opening and Closing Database Connection</h3>
+            <p>PHP provides <b>mysqli_connect()</b> function to open a database connection. This function takes four parameters and returns a MySQL link indentifier on success or FALSE on failure. The four parameters of this function are:</p>
+            <ul style="margin-left: 2%">
+                <li><b>servername</b> - An optional parameter that contains the server or host name running the database server. The default value is localhost:3306.</li>
+                <li><b>username</b> - An optional parameter used to specify the username accessing the database. The default value is the name of the user that owns the server process.</li>
+                <li><b>password</b> - An optional parameter used to specify the password of the user accessing the database. The default value is an empty password.</li>
+                <li><b>database_name</b> - An optional parameter used to specify the default to be used when performing queries.</li>
+            </ul>
+            <p>The function mysqli_close() is used to close the database connection when finished retrieving or updating data. By default, the connection is closed automatically when the script ends.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/PHP/Database/1.txt" style="width:100%; height: 189.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Database/1.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Creating a Database</h3>
+            <p>A database consists of one or more related tables. To create and delete a database, one requires admin privilege.</p>
+            <p>PHP uses mysqli_query function to execute SQL statements. This function takes two parameters and returns TRUE on success and FALSE on failure. Its parameters are:</p>
+            <ul style="margin-left: 2%;">
+                <li><b>query</b> - It is a required paramter that contains the SQL query.</li>
+                <li><b>connection</b> - It is an optional parameter used to specify the connection reference. If it is not specified, the last opened connection of mysqli_connect() is used.</li>
+            </ul>
+            <p>To create a database, the sql argument is <b>CREATE DATABASE database_name;</b> statement.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/PHP/Database/2.txt" style="width:100%; height: 129.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Database/2.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Creating a Table</h3>
+            <p>To create tables the database, the "create table" query is used. Its syntax is <b>CREATE TABLE table_name (field_name datatye(size));</b>.</p>
+            <p>The various datatypes available are:</p>
+            <table border=1 style="border-collapse: collapse; margin-left: 2%">
+                <tr>
+                    <th style="padding-left: 2px; width: 85pt">Type</th>
+                    <th style="padding-left: 2px; width: 700pt">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">char [length]</td>
+                    <td style="padding-left: 2px;">A fixed-length field from 0 to 255 characters long</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">varchar [length]</td>
+                    <td style="padding-left: 2px;">A variable-length feild from 0 to 65,535 characters long</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Tinytext</td>
+                    <td style="padding-left: 2px;">A string with a maximum length of 255 characters</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Text</td>
+                    <td style="padding-left: 2px;">A string with a maximum length of 65,535 characters</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Mediumtext</td>
+                    <td style="padding-left: 2px;">A string with a maximum length of 16,777,215 characters</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Longtext</td>
+                    <td style="padding-left: 2px;">A string with a maximum length of 4,294,967,295 characters</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Tinyint</td>
+                    <td style="padding-left: 2px;">Range of -128 to 127 or 0 to 255 unassigned. Uses 1 byte of storage</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Smallint</td>
+                    <td style="padding-left: 2px;">Range of -32,768 to 32,767 or 0 to 65,535 unassigned. Uses 2 bytes of storage</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Mediumint</td>
+                    <td style="padding-left: 2px;">Range of -8,388,308 to 8,388,307 or 0 to 4,294,967,295 unassigned. Uses 3 bytes of storage</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Int</td>
+                    <td style="padding-left: 2px;">Range of -2,147,483,648 to 2,147,483,647 or 0 to 4,294,967,295. Uses 4 bytes of storage</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Bigint</td>
+                    <td style="padding-left: 2px;">Range of -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 or 0 to 18,446,744,073,709,551,615 unassigned. Uses 6 bytes of storage</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Float</td>
+                    <td style="padding-left: 2px;">A small number with a floating decimal point. Uses 4 bytes of storage</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Double</td>
+                    <td style="padding-left: 2px;">A large number with a floating decimal point. Uses 8 bytes of storage</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Decimal</td>
+                    <td style="padding-left: 2px;">A "Double" stored as a string, allowing for a fixed decimal point</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Date</td>
+                    <td style="padding-left: 2px;">In the format of YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Datetime</td>
+                    <td style="padding-left: 2px;">In the format of YYYY-MM-DD HH:MM:SS</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">Timestamp</td>
+                    <td style="padding-left: 2px;">In the format of YYYYMMDDHHMMSS. Acceptable range starts in 1970 and ends in 2038</td>
+                </tr>
+            </table>
+            <br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/PHP/Database/3.txt" style="width:100%; height: 129.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Database/3.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Inserting Records in a Table</h3>
+            <p>Inserting records means adding or appending a new record at the end of the database. The "insert into" statement is used to add new records to a MySQL table. It has the syntax: <b>INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);</b>.</p>
+            <p>There are certain rules for inserting records in a table:</p>
+            <ul style="margin-left: 2%">
+                <li>Column count and value count should be same</li>
+                <li>If a column has a default value, that column can be omitted</li>
+                <li>Except numberic values and null, other values need to be enclosed in single quotes (' ')</li>
+            </ul><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/PHP/Database/4.txt" style="width:100%; height: 129.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Database/4.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Retrieving Data from a Database</h3>
+            <p>Data is retrieved from a MySQL database using the "select" statement. Its syntax is: <b>SELECT column_name(s) FROM table_name WHERE condition;</b>.</p>
+            <p>To fetch the entire table, the command "select * from table_name;" is used.</p>
+            <p>While retrieving multiple columns, column names are seperated by commas.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/PHP/Database/5.txt" style="width:100%; height: 174.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Database/5.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Updating Data in a Database</h3>
+            <p>Updating records refers to changing data in the existing records. The record(s) to be updated need to be identified beofre the updation takes place.</p>
+            <p>Data can be updated in MySQL tables by executing the "update" statement. The syntax of this statement is: <b>UPDATE table_name SET column_name=new_value WHERE column_name=old_value;</b>.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/PHP/Database/6.txt" style="width:100%; height: 129.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Database/6.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Deleting Data from a Database</h3>
+            <p>Deleting records involves removing a record from the database table. Like in update, the record to be deleted reuires to be identified first.</p>
+            <p>The "delete" statement is used to delete records. The conditional clause "where" is used to locate the record which is to be deleted. If the conditional clause is not used, all the records in the table willl be deleted.</p>
+            <p>The syntax for the delete command is: <b>DELETE FROM table_name WHERE column_name=value;</b>.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/PHP/Database/7.txt" style="width:100%; height: 129.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Database/7.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>

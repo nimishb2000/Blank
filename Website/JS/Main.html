@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title>HTML</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>JavaScript</h2><br><br>
+            <p><b>JavaScript</b>, often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. Initially only implemented client-side in web browsers, JavaScript engines are now embedded in many other types of host software.</p><br>
+            <h3>History</h3>
+            <p>In 1995, Netscape Communications recruited Brendan Eich with the goal of embedding the Scheme programming language into its Netscape Navigator. Before he could get started, Netscape Communications collaborated with Sun Microsystems to include in Netscape Navigator Sun's more static programming language Java, in order to compete with Microsoft for user adoption of Web technologies and platforms. Netscape Communications then decided that the scripting language they wanted to create would complement Java and should have a similar syntax, which excluded adopting other languages such as Perl, Python, TCL, or Scheme. To defend the idea of JavaScript against competing proposals, the company needed a prototype. Eich wrote one in 10 days, in May 1995.</p><br>
+            <h3>Server-Side JavaScript</h3>
+            <p>In December 1995, soon after releasing JavaScript for browsers, Netscape introduced an implementation of the language for server-side scripting with Netscape Enterprise Server.</p><p>Since the mid-2000s, additional server-side JavaScript implementations have been introduced, such as Node.js in 2009.</p><br>
+            <h3>Later Developments</h3>
+            <p>JavaScript has become one of the most popular programming languages on the Web. Initially, however, many professional programmers denigrated the language because, among other reasons, its target audience consisted of Web authors and other such "amateurs". The advent of Ajax returned JavaScript to the spotlight and brought more professional programming attention. The result was a proliferation of comprehensive frameworks and libraries, improved JavaScript programming practices, and increased usage of JavaScript outside Web browsers, as seen by the proliferation of server-side JavaScript platforms.</p>
+            <h3>Trademark</h3>
+            <p>"JavaScript" is a trademark of Oracle Corporation in the United States. It is used under license for technology invented and implemented by Netscape Communications and current entities such as the Mozilla Foundation.</p>
+            <h3>Vanilla JavaScript</h3>
+            <p>The terms Vanilla JavaScript and Vanilla JS refer to JavaScript not extended by any frameworks or additional libraries. Scripts written in Vanilla JS are plain JavaScript code.</p><br>
+            <h3>Features</h3>
+            <p>The major feature of the JavaScript are:</p>
+            <ul style="margin-left: 2%">
+                <li><b>Universal support</b> - All modern Web browsers support JavaScript with built-in interpreters.</li>
+                <li><b>Imperative and structured</b> - JavaScript supports much of the structured programming syntax from C (e.g., if statements, while loops, switch statements, do while loops, etc.). One partial exception is scoping: JavaScript originally had only function scoping with var. </li>
+                <li><b>Dynamic Typing</b> - As with most scripting languages, JavaScript is dynamically typed; a type is associated with each value, rather than just with each expression.
+                <li><b>Run-time evaluation</b> - JavaScript includes an eval function that can execute statements provided as strings at run-time.</li>
+            </ul><br>
+            <h3>Use in Web pages</h3>
+            <p>As of May 2017 94.5% of 10 million most popular web pages used JavaScript. The most common use of JavaScript is to add client-side behavior to HTML pages, also known as Dynamic HTML (DHTML). Scripts are embedded in or included from HTML pages and interact with the Document Object Model (DOM) of the page. Some simple examples of this usage are:</p>
+            <ul style="margin-left: 2%">
+                <li>Loading new page content or submitting data to the server via Ajax without reloading the page (for example, a social network might allow the user to post status updates without leaving the page).</li>
+                <li>Animation of page elements, fading them in and out, resizing them, moving them, etc.</li>
+                <li>Interactive content, for example games, and playing audio and video.</li>
+                <li>Validating input values of a Web form to make sure that they are acceptable before being submitted to the server.</li>
+                <li>Transmitting information about the user's reading habits and browsing activities to various websites. Web pages frequently do this for Web analytics, ad tracking, personalization or other purposes.</li>
+        </div>
+    </body>
+</html>

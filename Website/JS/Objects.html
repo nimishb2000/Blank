@@ -1,0 +1,318 @@
+<html>
+    <head>
+        <title>Javascript Objects</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>Object-Based Programming</h2><br><br>
+            <h3>Objects</h3>
+            <p>An <b>object</b> is a programming abstractoin that groups data with the code hat operates on it.</p>
+            <p>Traditionally, codes and data are kept apart but in javascript, code(methods) and data(properties) are merged into a single indivisble unit called object.</p>
+            <p>Javascript supports two types of objects:</p>
+            <ul style="margin-left: 2%">
+                <li>Pre-defined built-in objects</li>
+                <li>User-defined objects</li>
+            </ul><br>
+            <h3>Creating an Object</h3>
+            <p>To create an object, the keyword "new" is used and the syntax is: <b>var var_name = NEW object_name([optional_parameters])</b>.</p>
+            <p>The keyword new tells the javascript that a new object is to be created.</p><br>
+            <h3>Using Object's Properties</h3>
+            <p>Any object has its unique characteristics. unique characteristics are called ad properties in the object-oriented teminology.</p>
+            <p>An object's property stores data related to the object and can be referred to using the syntax: <b>object_name.property_name</b>.</p>
+            <p>The dot(.) is used to seperate the object from its property.</p>
+            <p>Unlike variables, some properties are read-only, i.e. it is possible to get information from them but it is not possible to change the information inside them.</p>
+            <p>An object can also be a property of another object, thus creating an object hierarchy. This uses the same syntax: <b>object1.object2property1.property2</b></p><br>
+            <h3>Calling an Object's Methods</h3>
+            <p>Methods are functions associated with objects. They enable an object to perform different actions, mostly on its own properties.</p>
+            <p>They have exclusive access to the state of the object and are, hence, different from normal functions.</p>
+            <p>A method is called using syntax: <b>object_name.method_name([arguments])</b>.</p>
+            <p>Since a method is a function, a pair of parentheses always follows the name of the method. This rule applies to all methods, including those which do not have any arguments.</p><br>
+            <h3>The Array Object</h3>
+            <p>An array is a type of variable that groups a series of values and places them in a single varibale. These are simple built-in objects in javascript and created using the syntax: <b>var array_name = new Array(array_length)</b>.</p>
+            <p>Array length is an optional paramter used to specify the initial length of the array.</p>
+            <p>The Array object has the following properties:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 80pt;">Property</th>
+                    <th style="padding-left: 2px; width: 285pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">constructor</td>
+                    <td style="padding-left: 2px;">Used to reference the constructor function for the object</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">length</td>
+                    <td style="padding-left: 2px;">Returns the number of elements in the array</td>
+                </tr>
+            </table>
+            <p>The Array object has the following methods:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 80pt;">Method</th>
+                    <th style="padding-left: 2px; width: 710pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">concat(array2)</td>
+                    <td style="padding-left: 2px;">It concatenates two arrays and returns the array thus formed. The new array returned has elements of first array followed by those of second array.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">join(delimiter)</td>
+                    <td style="padding-left: 2px;">Joins all the elements of an array into a single string seperated by the specified delimiter.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">reverse()</td>
+                    <td style="padding-left: 2px;">Reverses the order of elements in an array.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">sort()</td>
+                    <td style="padding-left: 2px;">Sorts the elements of the array in ascending order.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">toString()</td>
+                    <td style="padding-left: 2px;">Converts the Array object into a string with elements seperated by commas.</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Objects/1.txt" style="width:100%; height: 249.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Objects/1.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>The Date Object</h3>
+            <p>The date object handles everything to do with date and time in javascript. A Date object can be created in four different ways using the constructor:</p>
+            <ul style="margin-left: 2%">
+                <li>new Date()</li>
+                <li>new Date(milliseconds)</li>
+                <li>new Date(date_string)</li>
+                <li>new Date(year, month, day, hours, minutes, seconds, milliseconds)</li>
+            </ul>
+            <p>The Date object has the following properties:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 80pt;">Property</th>
+                    <th style="padding-left: 2px; width: 285pt;">Description</th>
+                </tr>
+                <tr>
+                    <td>constructor</td>
+                    <td>Used to reference the constructor function for the object</td>
+                </tr>
+            </table>
+            <p>The Date object has the following methods:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 130pt;">Method</th>
+                    <th style="padding-left: 2px; width: 700pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getDate()</td>
+                    <td style="padding-left: 2px;">Retrieves the date in the month from the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getDay()</td>
+                    <td style="padding-left: 2px;">Retrieves the day of the week from the Date object as integer, with Sunday as 0 and Monday as 1.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getFullYear()</td>
+                    <td style="padding-left: 2px;">Retrieves the year as a four digit number from the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getHours()</td>
+                    <td style="padding-left: 2px;">Retrieves the hour of the day form the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getMinutes()</td>
+                    <td style="padding-left: 2px;">Retrieves the number of minutes from the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getMonth()</td>
+                    <td style="padding-left: 2px;">Retrieves the month from the Date object as an integer, with January as 0 and February as 1.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getSeconds()</td>
+                    <td style="padding-left: 2px;">Retrieves the number of seconds from the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getTime()</td>
+                    <td style="padding-left: 2px;">Retrieves the number of milliseconds since January 1 1970 00:00:00 from the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">getYear()</td>
+                    <td style="padding-left: 2px;">Retrieves the year from the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setDate(Date)</td>
+                    <td style="padding-left: 2px;">Sets the date in the month to the date provided for the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setFullYear(4_digit_year)</td>
+                    <td style="padding-left: 2px;">Sets the full year to the provided 4 digit year for the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setHours(hour)</td>
+                    <td style="padding-left: 2px;">Sets the hour of the day to the provided hour for the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setMintes(Minutes)</td>
+                    <td style="padding-left: 2px;">Sets the number of minutes to the provided number for the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setMonth(Month)</td>
+                    <td style="padding-left: 2px;">Sets the month to the provided month for the Date object. The month of the year is passed as an integer, where 0 is January and 1 is February.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setSeconds(Sec)</td>
+                    <td style="padding-left: 2px;">Sets the number of seconds to the provided number for the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setTime(milliseconds)</td>
+                    <td style="padding-left: 2px;">Sets the time for the Date object according to the number of milliseconds since January 1 1970 00:00:00.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">setYear(Year)</td>
+                    <td style="padding-left: 2px;">Sets the year to the provided year for the Date object.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">toString</td>
+                    <td style="padding-left: 2px;">Converts the Date object into a string.</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Objects/2.txt" style="width:100%; height: 249.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Objects/2.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>

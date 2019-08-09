@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>JS Functions</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>Javascript Functions</h2><br><br>
+            <h3>Advantages of Function</h3>
+            <p>A function is a named block of statements that are referenced and executed as a unit to accomplish a specific task or purpose in a program.</p>
+            <p>The advantages of using function in a program are:</p>
+            <ul style="margin-left: 2%">
+                <li>It makes the program more structured and breaks down complex programs into small manageable modules.</li>
+                <li>It saves typing effort. If the same set of statements needs to be executed multiple times at various locations, we can simply call the function wherever required.</li>
+                <li>It saves testing and debugging time since it is easier to fetect and remove errors from small modules than from a large complex program.</li>
+                <li>It is easier to make changes as changing code in a function requires change in only one place instead of many cahnges scattered throughout the program.</li>
+            </ul><br>
+            <h3>Defining and Calling a Function</h3>
+            <p>To create a function, the <b>function</b> keyword is used, followed by the name of the function. The block of statements of a function are surrounded in curly braces.</p>
+            <p>Parameters of the function (if any) are given next to the name of the function inside parentheses. A parameter is an item or data that the function needs to be given to do its job. Even if there are no parameters, the parentheses are mandatory.</p>
+            <p>Functions are only executed if specifically asked to, which is termed as calling or invoking the function. A function can be called by writing its name at the point where it has to be called.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Functions/1.txt" style="width:100%; height: 234.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Functions/1.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Built-in Functions</h3>
+            <p>Javascript offers a few functions that are pre-defined or built-in into the javascript interpreter, which can be used directly in any string.</p>
+            <p>These functions are highly reliable and can tremendously reduce the amount of coding required for a script.</p>
+            <p>Some of the most common built-in functions are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 95pt;">Function</th>
+                    <th style="padding-left: 2px; width: 85pt;">Return Type</th>
+                    <th style="padding-left: 2px; width: 800pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">parseInt(string)</td>
+                    <td style="padding-left: 2px;">Integer number</td>
+                    <td style="padding-left: 2px;">Converts a string of numbers into an integer value. If a non-integer numeric string is given as argument, the nearest integer is returned.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">parseFloat(string)</td>
+                    <td style="padding-left: 2px;">Float number</td>
+                    <td style="padding-left: 2px;">Converts a string of numbers into a floating value.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">eval()</td>
+                    <td style="padding-left: 2px;">Number/String</td>
+                    <td style="padding-left: 2px;">It accepts a string representing a number or a mathematical expression and returns the value of the expression after evaluation. If the value supplied is not a number, it returns a string as a concatenated value.</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">isNaN</td>
+                    <td style="padding-left: 2px;">Boolean</td>
+                    <td style="padding-left: 2px;">It evaluates an arguments to determine if it is not a number (or NaN). It returns true if the argument is not a number and false otherwise.</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Functions/2.txt" style="width:100%; height: 234.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Functions/2.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>

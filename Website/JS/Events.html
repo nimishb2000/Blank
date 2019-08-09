@@ -1,0 +1,575 @@
+<html>
+    <head>
+        <title>Event Handling</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>Javascript Event Handling</h2><br><br>
+            <h3>Events and Event Handlers</h3>
+            <p>Events are the mechanism by which browsers respond to user actions.</p>
+            <p>The special functions that are linked to specific events are called event handlers and they execute automatically when events occur. These are made up of the word <i>on</i> and the event they handle.</p>
+            <p>Events defined by javascript are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 150pt;">HTML Element</th>
+                    <th style="width: 100pt;">Javascript Event</th>
+                    <th style="width: 320pt">Description</th>
+                </tr>
+                <tr>
+                    <td rowspan="7" style="padding-left: 2px; text-align: center;">Window, Frameset, Frame</td>
+                    <td style="padding-left: 2px;">blur</td>
+                    <td style="padding-left: 2px;">A window loses the current input focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">error</td>
+                    <td style="padding-left: 2px;">An error occurs when window is loaded</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">focus</td>
+                    <td style="padding-left: 2px;">A window recieves current input focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">load</td>
+                    <td style="padding-left: 2px;">The loading of a window is complete</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">unload</td>
+                    <td style="padding-left: 2px;">The user closes a window</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">move</td>
+                    <td style="padding-left: 2px;">A window is moved</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">resize</td>
+                    <td style="padding-left: 2px;">A window is resized</td>
+                </tr>
+                <tr>
+                    <td rowspan="7" style="padding-left: 2px; text-align: center;">Document, Body</td>
+                    <td style="padding-left: 2px;">click</td>
+                    <td style="padding-left: 2px;">User clicks in the body of a document</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">dblClick</td>
+                    <td style="padding-left: 2px;">User double-clicks in the body of a document</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">keyDown</td>
+                    <td style="padding-left: 2px;">User presses a key</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">keyUp</td>
+                    <td style="padding-left: 2px;">User releases a key</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">keyPress</td>
+                    <td style="padding-left: 2px;">User presses and releases a key</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseDown</td>
+                    <td style="padding-left: 2px;">The mouse button is pressed</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseUp</td>
+                    <td style="padding-left: 2px;">The mouse button is released</td>
+                </tr>
+                <tr>
+                    <td rowspan="9" style="padding-left: 2px; text-align: center;">Link</td>
+                    <td style="padding-left: 2px;">Click</td>
+                    <td style="padding-left: 2px;">The mouse is clicked on a link</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">dblClick</td>
+                    <td style="padding-left: 2px;">User double-clicks on a link</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseDown</td>
+                    <td style="padding-left: 2px;">The mouse button is pressed</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseUp</td>
+                    <td style="padding-left: 2px;">The mouse button is released</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseOut</td>
+                    <td style="padding-left: 2px;">The mouse is moved from inside a link to outside of that link</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseOver</td>
+                    <td style="padding-left: 2px;">The mouse is moved over a link</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">keyDown</td>
+                    <td style="padding-left: 2px;">User presses a key when link has focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">keyUp</td>
+                    <td style="padding-left: 2px;">User releases a key when link has focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">keyPress</td>
+                    <td style="padding-left: 2px;">User presses and releases a key</td>
+                </tr>
+                <tr>
+                    <td rowspan="8" style="padding-left: 2px; text-align: center;">Image</td>
+                    <td style="padding-left: 2px;">abort</td>
+                    <td style="padding-left: 2px;">An image loading is aborted</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">error</td>
+                    <td style="padding-left: 2px;">An error occurs during loading of an image</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">load</td>
+                    <td style="padding-left: 2px;">An image is loaded and displayed</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">click</td>
+                    <td style="padding-left: 2px;">The mouse is clicked on an image</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">dblClick</td>
+                    <td style="padding-left: 2px;">The mouse is double-clicked on an image</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseDown</td>
+                    <td style="padding-left: 2px;">The mouse button is pressed</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseUp</td>
+                    <td style="padding-left: 2px;">The mouse button is released</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mouseOver</td>
+                    <td style="padding-left: 2px;">The mouse is moved over an image</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="padding-left: 2px; text-align: center;">Form</td>
+                    <td style="padding-left: 2px;">submit</td>
+                    <td style="padding-left: 2px;">A form is submitted by the user</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">reset</td>
+                    <td style="padding-left: 2px;">A form is reset by the user</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Events/1.txt" style="width:100%; height: 264.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Events/1.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Interacting with HTML Button Element</h3>
+            <p>Javascript can interact with a button element of a form using its properties and events.</p>
+            <p>The properties of a button element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 50pt;">Name</th>
+                    <th style="padding-left: 2px; width: 260pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">form</td>
+                    <td style="padding-left: 2px;">Gets the form object containing the button</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">name</td>
+                    <td style="padding-left: 2px;">Gets or sets the name of the button</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">type</td>
+                    <td style="padding-left: 2px;">Gets or sets the type of the element (returns "button")</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">value</td>
+                    <td style="padding-left: 2px;">Gets or sets the value of the button</td>
+                </tr>
+            </table>
+            <p>The events of a button element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 50pt;">Name</th>
+                    <th style="padding-left: 2px; width: 260pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onclick</td>
+                    <td style="padding-left: 2px;">Triggers when user clicks the button</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onfocus</td>
+                    <td style="padding-left: 2px;">Triggers when the button gets the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onblur</td>
+                    <td style="padding-left: 2px;">Triggers when the button loses the focus</td>
+                </tr>
+            </table>
+            <p>These properties and events apply to the Submit and Reset buttons too.</p>
+            <br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Events/2.txt" style="width:100%; height: 399.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Events/2.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Interacting with HTML Text Element</h3>
+            <p>A text box is a rectangular object that recieves or displays text.</p>
+            <p>The properties of a text element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 85pt;">Name</th>
+                    <th style="width: 275pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">default value</td>
+                    <td style="padding-left: 2px;">Gets or sets the default value of the text box</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">form</td>
+                    <td style="padding-left: 2px;">Gets the form object containing the text box</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">name</td>
+                    <td style="padding-left: 2px;">Gets or sets the name of the text box</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">type</td>
+                    <td style="padding-left: 2px;">Gets or sets the type of the element</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">value</td>
+                    <td style="padding-left: 2px;">Gets or sets the value of the text box</td>
+                </tr>
+            </table>
+            <p>The events of a text element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 85pt;">Name</th>
+                    <th style="width: 275pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onblur</td>
+                    <td style="padding-left: 2px;">Triggers when the text box loses the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onchange</td>
+                    <td style="padding-left: 2px;">Triggers when the content of the text box is changed</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onfocus</td>
+                    <td style="padding-left: 2px;">Triggers when the text box gets the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onselect</td>
+                    <td style="padding-left: 2px;">Triggers when the contents of the text box are selected</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Events/3.txt" style="width:100%; height: 324.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Events/3.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Interacting with HTML Radio Button Element</h3>
+            <p>The radio element presents a circular button the user can click. Radio controls are used to allow the user to select only one choice from a list of possible choices. To do this, all the buttons are put in the same group by giving each button the same name.</p>
+            <p>The properties of a radio element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 85pt;">Name</th>
+                    <th style="padding-left: 2px; width: 300pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">checked</td>
+                    <td style="padding-left: 2px;">Gets or sets whether the radio button is selected</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">defaultchecked</td>
+                    <td style="padding-left: 2px;">Gets or sets whether the radio button is checked by default</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">form</td>
+                    <td style="padding-left: 2px;">Gets the form object containing the radio button</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">name</td>
+                    <td style="padding-left: 2px;">Gets or sets the name of the radio button</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">type</td>
+                    <td style="padding-left: 2px;">Gets or sets the type of the element (returns "radio")</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">value</td>
+                    <td style="padding-left: 2px;">Gets or sets the value of the radio element</td>
+                </tr>
+            </table>
+            <p>The events of a radio element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 85pt;">Name</th>
+                    <th style="padding-left: 2px; width: 300pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onblur</td>
+                    <td style="padding-left: 2px;">Triggers when a radio button loses the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onfocus</td>
+                    <td style="padding-left: 2px;">Triggers when a radio button gets the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onclick</td>
+                    <td style="padding-left: 2px;">Triggers when a radio button is clicked</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Events/4.txt" style="width:100%; height: 339.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Events/4.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Interacting with HTML Checkbox Element</h3>
+            <p>The checkbox element presents a check box the user can either check on or off. A checkbox control is used to allow the user to select one or more choices from a list.</p>
+            <p>The properties of a checkbox element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 85pt;">Name</th>
+                    <th style="padding-left: 2px; width: 325pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">checked</td>
+                    <td style="padding-left: 2px;">Gets or sets whether the checkbox button is selected</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">defaultchecked</td>
+                    <td style="padding-left: 2px;">Gets or sets whether the checkbox button is checked by default</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">form</td>
+                    <td style="padding-left: 2px;">Gets the form object containing the checkbox button</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">name</td>
+                    <td style="padding-left: 2px;">Gets or sets the name of the checkbox button</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">type</td>
+                    <td style="padding-left: 2px;">Gets or sets the type of the element (returns "checkbox")</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">value</td>
+                    <td style="padding-left: 2px;">Gets or sets the value of the checkbox element</td>
+                </tr>
+            </table>
+            <p>The events of a checkbox element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 85pt;">Name</th>
+                    <th style="padding-left: 2px; width: 325pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onblur</td>
+                    <td style="padding-left: 2px;">Triggers when a checkbox button loses the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onfocus</td>
+                    <td style="padding-left: 2px;">Triggers when a checkbox button gets the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onclick</td>
+                    <td style="padding-left: 2px;">Triggers when a checkbox button is clicked</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Events/5.txt" style="width:100%; height: 369.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Events/5.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Interacting with HTML Select Element</h3>
+            <p>The select control presents a list from which the user can select one of several items.</p>
+            <p>The properties of the select element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 85pt;">Name</th>
+                    <th style="padding-left: 2px; width: 425pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">form</td>
+                    <td style="padding-left: 2px;">Gets the form object containing the list</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">length</td>
+                    <td style="padding-left: 2px;">Gets or sets the length of the list</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">name</td>
+                    <td style="padding-left: 2px;">Gets or sets the name of the list</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">options</td>
+                    <td style="padding-left: 2px;">An array that identifies options supported by the list</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">selectedIndex</td>
+                    <td style="padding-left: 2px;">Gets or sets the index of the item selected from the list and the indexing starts from 0</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">type</td>
+                    <td style="padding-left: 2px;">Gets or sets the type of the element</td>
+                </tr>
+            </table>
+            <p>The events of the select element are:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="padding-left: 2px; width: 85pt;">Name</th>
+                    <th style="padding-left: 2px; width: 425pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onblur</td>
+                    <td style="padding-left: 2px;">Triggers when the list loses the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onfocus</td>
+                    <td style="padding-left: 2px;">Triggers when the list gets the focus</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">onchange</td>
+                    <td style="padding-left: 2px;">Triggers when an item of the list is selected</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Events/6.txt" style="width:100%; height: 444.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/JS/Events/6.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,306 @@
+<html>
+    <head>
+        <title>PHP Functions</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>In-Built Functions</h2><br><br>
+            <h3>String Functions</h3>
+            <p>Functions are reusable pieces of code that can be used throughout an applications, thus reducing amount of coding and making the applications modular.</p>
+            <p>PHP provides a rich collection of built-in functions. They can be called anywhere in our scripts wthout defining them.</p>
+            <p>PHP has a number of built-in String Manipulation Functions, supporting various kinds of string operations:</p>
+            <ul style="margin-left: 2%;">
+                <li><b>strtoupper()</b> - This function accepts a string as an argument and returns it with all the alphabetic characters coverted to upper case.</li>
+                <li><b>strtolower()</b> - This function accepts a string as an argument and returns it with all the alphabetic characters coverted to lower case.</li>
+                <li><b>strlen()</b> - This function returns the length of the given string.</li>
+                <li><b>ltrim()</b> - This function removes whitespace or other characters form the beginning of a string.</li>
+                <li><b>rtrim()</b> - This function removes whitespace or other characters form the end of a string.</li>
+                <li><b>trim()</b> - This function removes whitespace or other characters form both beginning and end of a string.</li>
+                <li><b>substr()</b> - This function returns the specified portion from a sting.</li>
+                <li><b>strrev()</b> - This function reverses a string.</li>
+                <li><b>strcmp()</b> - This function compares two strings and returns -1 if first string is less, 0 if both strings are equal and 1 if first string is greater. This function is case-sensitive.</li>
+                <li><b>strcasecmp()</b> - This function performs case-insensitive string comparison.</li>
+                <li><b>strncasecmp()</b> - This function performs case-insensitive sring comparison of first n characters.</li>
+                <li><b>stripslashes()</b> - This function removes backslashes from a string.</li>
+            </ul><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/PHP/Functions/1.txt" style="width:100%; height: 249.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Functions/1.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+            <h3>Date Function</h3>
+            <p>The date() functions returns the current date/time in different formats depending on the parameters specified. Its is defined as date(<i>format</i>).</p>
+            <p>The format parameter specifies how the to format the date/time. Characters used are:</p>
+            <ul style="margin-left: 2%">
+                <li><b>d</b> - Returns day of the month (01 to 31)</li>
+                <li><b>D</b> - Short textual representation of day of week (Mon to Sun)</li>
+                <li><b>l</b> - Full textual representation of day of week (Monday to Sunday)</li>
+                <li><b>m</b> - Represents month number (01 to 12)</li>
+                <li><b>M</b> - Short textual representation of month (Jan to Dec)</li>
+                <li><b>F</b> - Full textual representation of month (January to Decemeber)</li>
+                <li><b>y</b> - Two-digit representation of year</li>
+                <li><b>Y</b> - Four-digit representation of year</li>
+                <li><b>h</b> - 12-hour format of an hour</li>
+                <li><b>H</b> - 24-hour format of an hour</li>
+                <li><b>i</b> - Minutes</li>
+                <li><b>s</b> - Seconds</li>
+                <li><b>a</b> - Lowercase Ante Meridiem or Post Meridiem (am or pm)</li>
+                <li><b>A</b> - Uppercase Ante Meridiem or Post Meridiem (AM or PM)</li>
+            </ul><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/PHP/Functions/2.txt" style="width:100%; height: 174.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Functions/2.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+            <h3>Getdate Function</h3>
+            <p>This funtions returns date/time information in the form of an associative array.</p>
+            <p>If a timestamp has been given as a parameter, its value is returned else the current local time is returned.</p>
+            <p>Elements returned in the associative array are as follows:</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 75px;">Key</th>
+                    <th style="width: 250px;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">seconds</td>
+                    <td style="padding-left: 2px;">Seconds past the minutes (0-59)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">minutes</td>
+                    <td style="padding-left: 2px;">Minutes past the hour (0-59)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">hours</td>
+                    <td style="padding-left: 2px;">Hours of the day (0-23)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mday</td>
+                    <td style="padding-left: 2px;">Day of the month (0-31)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">wday</td>
+                    <td style="padding-left: 2px;">Day of the week (0-6)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">mon</td>
+                    <td style="padding-left: 2px;">Month of the year (1-12)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">year</td>
+                    <td style="padding-left: 2px;">Year (4 digits)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">yday</td>
+                    <td style="padding-left: 2px;">Day of the year (0-365)</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">weekday</td>
+                    <td style="padding-left: 2px;">Day of the week</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">month</td>
+                    <td style="padding-left: 2px;">Month of the year</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">0</td>
+                    <td style="padding-left: 2px;">Unix Timestamp</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/PHP/Functions/3.txt" style="width:100%; height: 114.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Functions/3.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+            <h3>Gettimeofday Function</h3>
+            <p>This function returns the current time in the form of an associative array.</p>
+            <p>Elements in the returned associative array are:</p>
+            <ul style="margin-left: 2%">
+                <li><b>sec</b> - Seconds since Unix Epoch</li>
+                <li><b>usec</b> - Microseconds</li>
+                <li><b>minuteswest</b> - Minutes west of Greenwich</li>
+                <li><b>dsttime</b> - Type of dst correction</li>
+            </ul><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/PHP/Functions/4.txt" style="width:100%; height: 114.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Functions/4.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+            <h3>Mktime Function</h3>
+            <p>This function is used to define the date and time in a variable.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/PHP/Functions/5.txt" style="width:100%; height: 84.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Functions/5.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+            <h3>Strtotime Function</h3>
+            <p>This function is used to parse any English textual datetime description into a timestamp.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/PHP/Functions/6.txt" style="width:100%; height: 204.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/PHP/Functions/6.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+            <h3>Cal_days_in_month Function</h3>
+            <p>This function returns the number of days in a month for a specified year and calendar.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/Php/Functions/7.txt" style="width:100%; height: 84.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/Php/Functions/7.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br><br><br>
+            <h2>User-Defined Functions</h2><br>
+            <h3>Defining Functions</h3>
+            <p>A function is a group of code statements that can be called by an associated name to accomplish a specific task or purpose in a program.</p>
+            <p>Functions are declared using the <b>function</b> keyword, followed the the name of the function and the parameters (if any) in parentheses seperated by commas.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/Php/Functions/8.txt" style="width:100%; height: 219.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/Php/Functions/8.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+            <h3>Passing Arguments</h3>
+            <p>Arguments in a function can be passed in two ways:</p>
+            <ul style="margin-left: 2%">
+                <li>By value</li>
+                <li>By reference</li>
+            </ul>
+            <p>While passing arguments by value, a copy of the original argument is created and passed to the called function. Hence, any changes made inside the function will not affect the original value of the argument. This is the default method.</p>
+            <p>While passing arguments by reference, the actual memory address of the argument is passed to the called function. Any changes made inside the called function will modify the original argument. An ampersand (&amp;) is prefixed before the argument name.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.0.1/website/tutorials/Php/Functions/9.txt" style="width:100%; height: 219.5px; background:white;" scrolling=auto></iframe><br>
+                <a href="http://127.0.0.1/Website/Tutorials/Php/Functions/9.html" target="_blank"><button class="a">Show Example</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>

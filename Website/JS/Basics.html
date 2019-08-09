@@ -1,0 +1,509 @@
+<html>
+    <head>
+        <title>HTML Forms</title>
+        <link rel="icon" href="http://127.0.0.1/website/Images/Icon.ico" type="image/x-icon">
+        <style>
+            .nav {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                list-style: none;
+                background: #111;
+            }
+            .item {
+                width: 200px;
+                border-top: 1px solid #111;
+                border-bottom: 1px solid #000;
+                cursor: pointer;
+            }
+            .content {
+                display: none;
+                position: relative;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                min-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+                z-index: 2;
+            }
+            .drop {
+                position: relative;
+                display: block;
+            }
+            .content a {
+                font-size: 0.93em;
+                color: white;
+                padding: 0.98em;
+                text-decoration: none;
+                display: block;
+            }
+            .content a:hover {
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,1) 100%);
+                color: #c74438;
+            }
+            .drop:hover .content {
+                display: block;
+            }
+            .item a {
+                display: block;
+                padding: 0.95em;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+                color: white;
+                font-size: 1.18em;
+                text-decoration: none;
+                transition: color 0.2s, background 0.5s;
+            }
+            .item a:hover {
+                color: #c74438;
+                background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+                display: block;
+            }
+            .site {
+                background-color: white;
+                position: relative;
+                z-index: 1;
+                padding: 1em;
+                background-image: linear-gradient(90deg, rgb(254,255,255) 0%,rgb(221,241,249) 25%,rgb(160,216,239) 90%);
+                background-size: 200%;
+                left:200px;
+            }
+            body {
+                overflow-x: hidden;
+            }
+            *,*:before,*:after {
+                -webkit-box-sizing:border-box;
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            html, body {
+                height: 100%;
+                width: 92.5%;
+                text-align: justify;
+            }
+            .abc {
+                background-color: lightgray;
+                padding: 5px;
+            }
+            .a {
+                font-size: 15px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="item"><a href="http://127.0.0.1/website/body.html">Home</a></li>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/HTML/Main.html" target="f2">HTML</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/HTML/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Tags.html" target="f2">Tags</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Forms.html" target="f2">Forms</a></li>
+                    <li><a href="http://127.0.0.1/website/HTML/Frames.html" target="f2">Frames</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/CSS/Main.html" target="f2">CSS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/CSS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Properties.html" target="f2">Properties</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Classes.html" target="f2">Classes and IDs</a></li>
+                    <li><a href="http://127.0.0.1/website/CSS/Animations.html" target="f2">Animation and Transition</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/JS/Main.html" target="f2">JS</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/JS/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Loops.html" target="f2">Control Structures</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Objects.html" target="f2">Object-based Programming</a></li>
+                    <li><a href="http://127.0.0.1/website/JS/Events.html" target="f2">Event Handling</a></li>
+                </div>
+            </div>
+            <div class="drop">
+                <li class="item"><a href="http://127.0.0.1/website/PHP/Main.html" target="f2">PHP</a></li>
+                <div class="content">
+                    <li><a href="http://127.0.0.1/website/PHP/Basics.html" target="f2">Basics</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Loops.html" target="f2">Control Statements and Arrays</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Functions.html" target="f2">Functions</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Form.html" target="f2">Forms and Text Files</a></li>
+                    <li><a href="http://127.0.0.1/website/PHP/Database.html" target="f2">Database Linking</a></li>
+                </div>
+            </div>
+        </ul>
+        <div class="site">
+            <h2>JS Basics</h2><br><br>
+            <h3>Syntax</h3>
+            <p>In HTML, JavaScript code must be inserted between &lt;script&gt; and &lt;/script&gt; tags.</p>
+            <p>The script tag uses the attribute "language=javascript" to tell the page that the scripting language is javascript.</p>
+            <p>JavaScript is Case Sensitive. All JavaScript identifiers are case sensitive. The variables lastName and lastname, are two different variables.</p><br>
+            <h3>External JavaScript</h3>
+            <p>Scripts can also be placed in external files.</p>
+            <p>External scripts are practical when the same code is used in many different web pages.</p>
+            <p>JavaScript files have the file extension <b>.js</b>.</p>
+            <p>To use an external script, put the name of the script file in the src (source) attribute of a &lt;script&gt; tag.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/1.txt" style="width:100%; height: 174.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/1.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>External JavaScript Advantages</h3>
+            <p>Placing scripts in external files has various advantages:</p>
+            <ul style="margin-left: 2%">
+                <li>It separates HTML and code</li>
+                <li>It makes HTML and JavaScript easier to read and maintain</li>
+                <li>Cached JavaScript files can speed up page loads</li>
+            </ul><br>
+            <h3>JavaScript Display Possibilities</h3>
+            <p>JavaScript can "display" data in four different ways:</p>
+            <ul style="margin-left: 2%">
+                <li>Writing into an HTML element, using innerHTML.</li>
+                <li>Writing into the HTML output using document.write().</li>
+                <li>Writing into an alert box, using window.alert().</li>
+                <li>Writing into the browser console, using console.log().</li>
+            </ul><br>
+            <h3>document.write()</h3>
+            <p>For testing purposes, it is convenient to use document.write().</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/2.txt" style="width:100%; height: 144.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/2.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Using window.alert()</h3>
+            <p>window.alert is used to display an alert box to display the data.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/3.txt" style="width:100%; height: 174.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/3.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>JavaScript Keywords</h3>
+            <p>JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 60pt;">Keyword</th>
+                    <th style="width: 400pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">break</td>
+                    <td style="padding-left: 2px;">Terminates a switch or a loop</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">continue</td>
+                    <td style="padding-left: 2px;">Jumps out of a loop and starts at the top</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">debugger</td>
+                    <td style="padding-left: 2px;">Stops the execution of JavaScript, and calls (if available) the debugging function</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">do ... while</td>
+                    <td style="padding-left: 2px;">Executes a block of statements, and repeats the block, while a condition is true</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">for</td>
+                    <td style="padding-left: 2px;">Marks a block of statements to be executed, as long as a condition is true</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">function</td>
+                    <td style="padding-left: 2px;">Declares a function</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">if ... else</td>
+                    <td style="padding-left: 2px;">Marks a block of statements to be executed, depending on a condition</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">return</td>
+                    <td style="padding-left: 2px;">Exits a function</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">switch</td>
+                    <td style="padding-left: 2px;">Marks a block of statements to be executed, depending on different cases</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">try ... catch</td>
+                    <td style="padding-left: 2px;">Implements error handling to a block of statements</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">var</td>
+                    <td style="padding-left: 2px;">Declares a variable</td>
+                </tr>
+            </table>
+            <p>JavaScript keywords are reserved words. Reserved words cannot be used as names for variables.</p>
+            <p>Since js is case-sensitive, it does not interpret or Var as the keyword var.</p><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/4.txt" style="width:100%; height: 234.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/4.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>JavaScript Identifiers</h3>
+            <p>All JavaScript variables must be identified with unique names. These unique names are called identifiers.</p>
+            <p>Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).</p>
+            <p>The general rules for constructing names for variables (unique identifiers) are:</p>
+            <ul style="margin-left: 2%">
+                <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+                <li>Names must begin with a letter</li>
+                <li>Names can also begin with $ and _</li>
+                <li>Names are case sensitive</li>
+                <li>Reserved words cannot be used as names</li>
+            </ul><br>
+            <h3>Javascript Operators</h3>
+            <p>Operators are used to perform operations on variables and values.</p>
+            <p>Javascript divides the operators in the following groups:</p>
+            <ul style="margin-left: 2%">
+                <li>Arithmetic operators</li>
+                <li>Assignment operators</li>
+                <li>Comparison operators</li>
+                <li>Increment/Decrement operators</li>
+                <li>Logical operators</li>
+                <li>String operators</li>
+                <li>Array operators</li>
+            </ul><br>
+            <h3>Arithmetic Operators</h3>
+            <p>The Javascript arithmetic operators are used with numeric values to perform common arithmetical operations, such as addition, subtraction, multiplication etc.</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 55pt;">Operator</th>
+                    <th style="width: 80pt;">Name</th>
+                    <th style="width: 50pt;">Example</th>
+                    <th style="width: 180pt;">Result</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">+</td>
+                    <td style="padding-left: 2px;">Addition</td>
+                    <td style="padding-left: 2px;">x + y</td>
+                    <td style="padding-left: 2px;">Sum of x and y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">-</td>
+                    <td style="padding-left: 2px;">Subtraction</td>
+                    <td style="padding-left: 2px;">x - y</td>
+                    <td style="padding-left: 2px;">Difference of x and y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">*
+                    <td style="padding-left: 2px;">Multiplication</td>
+                    <td style="padding-left: 2px;">x * y</td>
+                    <td style="padding-left: 2px;">Product of x and y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">/</td>
+                    <td style="padding-left: 2px;">Division</td>
+                    <td style="padding-left: 2px;">x / y</td>
+                    <td style="padding-left: 2px;">Quotient of x and y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">%</td>
+                    <td style="padding-left: 2px;">Modulus</td>
+                    <td style="padding-left: 2px;">x % y</td>
+                    <td style="padding-left: 2px;">Remainder of x divided by y
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">**</td>
+                    <td style="padding-left: 2px;">Exponentiation</td>
+                    <td style="padding-left: 2px;">x ** y</td>
+                    <td style="padding-left: 2px;">Result of raising x to the y<sup>th</sup> power</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/5.txt" style="width:100%; height: 249.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/5.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Assignment Operators</h3>
+            <p>The Javascript assignment operators are used with numeric values to write a value to a variable.</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 70pt;">Assignment</th>
+                    <th style="width: 55pt;">Same as</th>
+                    <th style="width: 180pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x = y</td>
+                    <td style="padding-left: 2px;">x = y</td>
+                    <td style="padding-left: 2px;">The left operand gets set to the value of the expression on the right</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x += y</td>
+                    <td style="padding-left: 2px;">x = x + y</td>
+                    <td style="padding-left: 2px;">Addition</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x -= y</td>
+                    <td style="padding-left: 2px;">x = x - y</td>
+                    <td style="padding-left: 2px;">Subtraction</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x *= y</td>
+                    <td style="padding-left: 2px;">x = x * y</td>
+                    <td style="padding-left: 2px;">Multiplication</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x /= y</td>
+                    <td style="padding-left: 2px;">x = x / y</td>
+                    <td style="padding-left: 2px;">Division</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x %= y</td>
+                    <td style="padding-left: 2px;">x = x % y</td>
+                    <td style="padding-left: 2px;">Modulus</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/6.txt" style="width:100%; height: 324.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/6.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Increment / Decrement Operators</h3>
+            <p>The Javascript increment operators are used to increment a variable's value.</p>
+            <p>The Javascript decrement operators are used to decrement a variable's value.</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 55pt;">Operator</th>
+                    <th style="width: 80pt;">Name</th>
+                    <th style="width: 180pt;">Description</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">++x</td>
+                    <td style="padding-left: 2px;">Pre-increment</td>
+                    <td style="padding-left: 2px;">Increments x by one, then returns x</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x++</td>
+                    <td style="padding-left: 2px;">Post-increment</td>
+                    <td style="padding-left: 2px;">Returns x, then increments x by one</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">--x</td>
+                    <td style="padding-left: 2px;">Pre-decrement</td>
+                    <td style="padding-left: 2px;">Decrements x by one, then returns x</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">x--</td>
+                    <td style="padding-left: 2px;">Post-decrement</td>
+                    <td style="padding-left: 2px;">Returns x, then decrements x by one</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/7.txt" style="width:100%; height: 204.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/7.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Comparison Operators</h3>
+            <p>The Javascript comparison operators are used to compare two values (number or string).</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 55pt;">Operator</th>
+                    <th style="width: 120pt;">Name </th>
+                    <th style="width: 55pt;">Example</th>
+                    <th style="width: 220pt;">Result</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">= =</td>
+                    <td style="padding-left: 2px;">Equal</td>
+                    <td style="padding-left: 2px;">x = = y</td>
+                    <td style="padding-left: 2px;">Returns true if x is equal to y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">!=</td>
+                    <td style="padding-left: 2px;">Not equal</td>
+                    <td style="padding-left: 2px;">x != y</td>
+                    <td style="padding-left: 2px;">Returns true if x is not equal to y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">&gt;</td>
+                    <td style="padding-left: 2px;">Greater than</td>
+                    <td style="padding-left: 2px;">x &gt; y</td>
+                    <td style="padding-left: 2px;">Returns true if x is greater than y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">&lt;</td>
+                    <td style="padding-left: 2px;">Less than</td>
+                    <td style="padding-left: 2px;">x &lt; y</td>
+                    <td style="padding-left: 2px;">Returns true if x is less than y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">&gt;=</td>
+                    <td style="padding-left: 2px;">Greater than or equal to</td>
+                    <td style="padding-left: 2px;">x &gt;= y</td>
+                    <td style="padding-left: 2px;">Returns true if x is greater than or equal to y</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">&lt;=</td>
+                    <td style="padding-left: 2px;">Greater than or equal to</td>
+                    <td style="padding-left: 2px;">x &lt;= y</td>
+                    <td style="padding-left: 2px;">Returns true if x is less than or equal to y</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/8.txt" style="width:100%; height: 309.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/8.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+            <h3>Logical Operators</h3>
+            <p>The Javascript logical operators are used to combine conditional statements.</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 55pt;">Operator</th>
+                    <th style="width: 40pt;">Name</th>
+                    <th style="width: 55pt;">Example</th>
+                    <th style="width: 140pt;">Result</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">&amp;&amp;</td>
+                    <td style="padding-left: 2px;">And</td>
+                    <td style="padding-left: 2px;">x &amp;&amp; y</td>
+                    <td style="padding-left: 2px;">True if both x and y are true</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">||</td>
+                    <td style="padding-left: 2px;">Or</td>
+                    <td style="padding-left: 2px;">x || y</td>
+                    <td style="padding-left: 2px;">True if either x or y is true</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">!</td>
+                    <td style="padding-left: 2px;">Not</td>
+                    <td style="padding-left: 2px;">!x</td>
+                    <td style="padding-left: 2px;">True if x is not true</td>
+                </tr>
+            </table><br>
+            <h3>Truth Tables</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/9.html" style="width:100%; height: 179.5px; background:white;"></iframe>
+            </div><br>
+            <h3>String Operators</h3>
+            <p>Javascript has two operators that are specially designed for strings.</p>
+            <p>The JS comparison operators are used to compare two values (number or string)</p>
+            <table border="1" style="margin-left: 2%; border-collapse: collapse;">
+                <tr>
+                    <th style="width: 55pt;">Operator</th>
+                    <th style="width: 135pt;">Name </th>
+                    <th style="width: 75pt;">Example</th>
+                    <th style="width: 165pt;">Result</th>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">+</td>
+                    <td style="padding-left: 2px;">Concatenation</td>
+                    <td style="padding-left: 2px;">$txt1 + $txt2</td>
+                    <td style="padding-left: 2px;">Concatenation of $txt1 and $txt2</td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 2px;">+=
+                    <td style="padding-left: 2px;">Concatenation assignment</td>
+                    <td style="padding-left: 2px;">$txt1 += $txt2</td>
+                    <td style="padding-left: 2px;">Appends $txt2 to $txt1</td>
+                </tr>
+            </table><br>
+            <h3>Example</h3>
+            <div class="abc">
+                <iframe src="http://127.0.01/website/tutorials/JS/Basics/10.txt" style="width:100%; height: 204.5px; background:white;"></iframe><br>
+                <a href="http://127.0.01/website/tutorials/JS/Basics/10.html" target="_blank"><button class="a">Try Yourself</button></a>
+            </div><br>
+        </div>
+    </body>
+</html>
