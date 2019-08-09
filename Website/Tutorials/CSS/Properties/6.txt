@@ -1,0 +1,8 @@
+.dotted {border: 5px dotted red;}
+.dashed {border: 5px dashed yellow;}
+.double {border: 5px double blue;}
+.solid {border: 5px solid green;}
+.groove {border: 5px groove red;}
+.ridge {border: 5px ridge yellow;}
+.inset {border: 5px inset blue;}
+.outset {border: 5px outset green;}

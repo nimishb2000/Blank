@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            Drop-down Menu: <select><option>A</option><option>B</option><option>C</option></select>
+            List-scroll Menu: <select size=2><option>A</option><option>B</option><option>C</option></select>
+            Multiple Options: <select size=2 multiple><option>A</option><option>B</option><option>C</option></select>
+        </form>
+    </body>
+</html>

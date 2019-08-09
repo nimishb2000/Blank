@@ -1,0 +1,16 @@
+h1{
+    color: rgb(34, 120, 32);
+    letter-spacing: 2px;
+}
+h2{
+    text-align: center;
+    text-decoration: line-through;
+}
+h3{
+    text-transform: capitalize;
+    text-indent: 4%;
+}
+span{
+    word-spacing: 5px;
+    vertical-align: middle;
+}

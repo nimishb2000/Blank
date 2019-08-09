@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+    <frameset cols="30%, *">
+        <frame src="#">
+        <frameset ros="50%, *">
+    </frameset>
+</html>

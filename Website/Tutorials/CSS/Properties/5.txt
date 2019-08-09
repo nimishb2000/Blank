@@ -1,0 +1,15 @@
+h1{
+    background-color: deepskyblue;
+    padding: 5px;
+}
+h2{
+    background-color: greenyellow;
+    padding-left: 3pt;
+}
+h3{
+    background-color: crimson;
+    padding-top: 1pt;
+    padding-right: 2pt;
+    padding-bottom: 3pt;
+    padding-left: 4pt;
+}

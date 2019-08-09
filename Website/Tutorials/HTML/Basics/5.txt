@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <img src="http://127.0.0.1/website/data/Images/html%20logo.png" alt="HTML Logo"><br>
+        <img src="http://127.0.0.1/website/data/Images/css%20logo.png" alt="CSS Logo"><br>
+        <img src="http://127.0.0.1/website/data/Images/js%20logo.png" alt="JS Logo"><br>
+    </body>
+</html>

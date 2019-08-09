@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            Name: <input><br>
+            Comments: <textarea></textarea><br>
+            Age: <select></select>
+        </form>
+    </body>
+</html>

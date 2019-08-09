@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            Text: <input type="text"><br><br>
+            Password: <input type="password"><br><br>
+            Radio: <input type="radio" name="r1">A
+            <input type="radio" name="r1">B<br><br>
+            Checkbox: <input type="checkbox" name="c1">1
+            <input type="checkbox" name="c2">2<br><br>
+            Submit: <input type="submit"><br><br>
+            Reset: <input type="reset"><br><br>
+            Image: <input type="image" src="http://127.0.0.1/website/data/Images/Icon.ico" height=50 width=50><br><br>
+            Button: <input type="button" value="abc"><br><br>
+            File: <input type="file"><br><br>
+            Hidden: <input type="hidden"><br><br>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+h1.red{
+    color:red;
+}
+h1.green{
+    color:green;
+}
+font#blue{
+    color:blue;
+}

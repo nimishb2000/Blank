@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing. Aenean ac odio magna. Pellentesque sem erat sodales feugiat ipsum.</p>
+        <p>Vivamus id mauris et nisi efficitur imperdiet sit amet sed nibh. Fusce felis lacus, scelerisque ut nibh dolor.</p>
+    </body>
+</html>

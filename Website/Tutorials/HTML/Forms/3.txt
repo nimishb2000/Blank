@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            <textarea rows=5 cols=25 wrap="off"></textarea>
+            <textarea rows=5 cols=25 wrap="physical"></textarea>
+            <textarea rows=5 cols=25 wrap="virtual"></textarea>
+        </form>
+    </body>
+</html>

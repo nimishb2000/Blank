@@ -1,0 +1,7 @@
+body{
+    background-image: url("http://localhost/website/images/css logo.png");
+    background-repeat: repeat-y;
+}
+h1{
+    background-color: aqua;
+}

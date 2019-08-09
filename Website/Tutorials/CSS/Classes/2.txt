@@ -1,0 +1,20 @@
+h1{
+    font-size: 22pt;
+    color: red;
+    text-align: center;
+}
+h2{
+    font-size: 18pt;
+    color: blue;
+    font-style: italic;
+}
+body{
+    background: black;
+    color: white;
+}
+.left{margin-right: 50%;}
+.right{margin-left: 50%;}
+.center{
+    margin-left: 25%;
+    margin-right: 25%;
+}

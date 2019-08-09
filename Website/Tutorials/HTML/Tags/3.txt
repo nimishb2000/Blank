@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a name="top"><p>This is inter-linking <a href="http://google.co.in">Google</a><br>This is the example of Intra-Linking:</p></a>
+        <a href="#bottom">Go down</a>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="#top" name="bottom">Go to Top.</a>
+    </body>
+</html>

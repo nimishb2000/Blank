@@ -1,0 +1,12 @@
+h1{
+    margin:1cm;
+}
+h2{
+    margin-left:1cm;
+}
+h3{
+    margin-left:3cm;
+    margin-right:2cm;
+    margin-top:4cm;
+    margin-bottom:3cm;
+}
