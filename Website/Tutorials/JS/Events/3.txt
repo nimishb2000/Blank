@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            function change(){
+                a=f1.t1.value;
+                b=f1.t2.value;
+                document.bgColor=a;
+                document.fgColor=b;
+	       }
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            Background Colour: <input type="text" name="t1"><br>
+            Foreground Colour: <input type="text" name="t2"><br>
+            <input type="button" value="Change" onClick=change() />
+        </form>
+    </body>
+</html>

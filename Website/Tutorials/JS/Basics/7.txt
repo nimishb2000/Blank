@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            a=10;
+            document.write(a+++"<br>");
+            document.write(++a+"<br>");
+            document.write(a--+"<br>");
+            document.write(--a+"<br>");
+        </script>
+    </head>
+</html>

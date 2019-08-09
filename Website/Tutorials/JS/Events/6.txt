@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            function disp(){
+                a="You are in class: ";
+                i=0;
+                while(i<=12){
+                    if(f1.s1.selectedIndex == i){a=a+i;}
+                    i++;
+                }
+                f1.t1.value=a;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            Select your class:
+            <select name="s1" onchange="disp()">
+                <option>---Select One---</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option>
+                <option>9</option><option>10</option><option>11</option><option>12</option>
+            </select><br>
+            <input type="text" name="t1" size=40>
+        </form>
+    </body>
+</html>

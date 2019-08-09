@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            var a, b;
+            a=parseInt(prompt("Enter 1st number"));
+            b=parseFloat(prompt("Enter 2nd number"));
+            document.write("The first number is "+a+"<br>");
+            document.write("The second number is "+b+"<br>");
+            document.write("The sum is "+eval(a+b)+"<br>");
+            document.write("The statement result isNan is "+isNaN(eval(a-b)));
+        </script>
+    </head>
+</html>

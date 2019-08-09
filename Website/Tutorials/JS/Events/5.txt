@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            function disp(){
+                a="You have selected: ";
+                if(f1.c1.checked){a=a+"Books ";}
+                if(f1.c2.checked){a=a+"Movies ";}
+                if(f1.c3.checked){a=a+"Serials ";}
+                f1.t1.value=a;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            Select one or more options:<br>
+            <input type="checkbox" name="c1" onclick="disp()">Books<br>
+            <input type="checkbox" name="c2" onclick="disp()">Movies<br>
+            <input type="checkbox" name="c3" onclick="disp()">Serials<br>
+            <input type="text" name="t1" size=40>
+        </form>
+    </body>
+</html>

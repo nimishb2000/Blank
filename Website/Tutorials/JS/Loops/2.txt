@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            a=90;
+            switch (a){
+                case 100: document.write("A");
+                break;
+                case 90: document.write("B");
+                break;
+                case 80: document.write("C");
+                break;
+                default: document.write("D");
+            }
+        </script>
+    </head>
+</html>

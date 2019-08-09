@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            a=10;
+            b=a;
+            document.write(b+"<br>");
+            b+=a;
+            document.write(b+"<br>");
+            b-=a;
+            document.write(b+"<br>");
+            b*=a;
+            document.write(b+"<br>");
+            b/=a;
+            document.write(b+"<br>");
+            b%=a;
+            document.write(b+"<br>");
+        </script>
+    </head>
+</html>

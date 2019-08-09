@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            a=5;
+            b=2;
+            document.write(a+b+"<br>");
+            document.write(a-b+"<br>");
+            document.write(a*b+"<br>");
+            document.write(a/b+"<br>");
+            document.write(a%b+"<br>");
+            document.write(a**b+"<br>");
+        </script>
+    </head>
+</html>

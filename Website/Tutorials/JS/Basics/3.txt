@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2> Web Page</h2>
+        <p>first paragraph.</p>
+        <script>
+            window.alert(5 + 6);
+        </script>
+    </body>
+</html>

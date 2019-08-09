@@ -1,0 +1,15 @@
+var a = new Array(4, 1, 8, 10, 9, 6, 5, 3, 7, 2);
+var b = new Array("DEF", "XYZ", "ABC");
+document.write("1st array: "+a+"<br>");
+document.write("2nd array: "+b+"<br>");
+document.write("Length of 1st array: "+a.length+"<br>");
+document.write("Length of 2nd array: "+b.length+"<br>");
+document.write("1st array concatenated with 2nd: "+a.concat(b)+"<br>");
+document.write("Joining 1st array with semi-colon: "+a.join(";")+"<br>");
+document.write("Joining 2nd array with colon: "+b.join(":")+"<br>");
+document.write("Reverse of 1st array: "+a.reverse()+"<br>");
+document.write("Reverse of 2nd array: "+b.reverse()+"<br>");
+document.write("Sorting 1st array: "+a.sort()+"<br>");
+document.write("Sorting 2nd array: "+b.sort()+"<br>");
+document.write("1st array into string: "+a.toString()+"<br>");
+document.write("2nd array into string: "+b.toString());

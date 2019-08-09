@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            a=10;
+            b=15;
+            if (a>b){
+                document.write(a);
+            }
+            else{
+                document.write(b);
+            }
+        </script>
+    </head>
+</html>

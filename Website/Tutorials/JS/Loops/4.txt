@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <script language="javascript">
+            var a = new Array("ABC", "DEF", "XYZ");
+            for (x in a){
+                document.write(a[x]+"<br>");
+            }
+        </script>
+    </head>
+</html>

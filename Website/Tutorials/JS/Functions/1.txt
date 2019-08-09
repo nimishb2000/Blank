@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            var a;
+            function area(a){
+                a=prompt("Enter radius");
+                area=3.14*a*a;
+                document.write(area);
+            }
+            area();
+        </script>
+    </head>
+</html>

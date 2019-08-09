@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            function disp1(){
+                f1.t1.value="You have selected male";
+            }
+            function disp2(){
+                f1.t1.value="You have selected female";
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            Select a gender:<br>
+            <input type="radio" name="r1" onclick="disp1()">Male<br>
+            <input type="radio" name="r1" onclick="disp2()">Female<br>
+            <input type="text" name="t1" size=25>
+        </form>
+    </body>
+</html>

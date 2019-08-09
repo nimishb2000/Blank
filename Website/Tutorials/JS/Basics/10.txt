@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            a="Hello";
+            b=" World";
+            document.write(a+b+"<br>");
+            a+=b;
+            document.write(a);
+        </script>
+    </head>
+</html>

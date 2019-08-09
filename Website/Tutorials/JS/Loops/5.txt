@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            sum=0;
+            i=1;
+            while (i<=10){
+                sum=sum+i;
+                i++;
+            }
+            document.write(sum);
+        </script>
+    </head>
+</html>

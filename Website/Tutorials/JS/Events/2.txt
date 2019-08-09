@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script language="javascript">
+            function color(){
+                if(document.f1.btn.value=="Black"){
+                    document.bgColor="black";
+                    document.fgColor="white";
+                    document.f1.btn.value="White";
+                }
+                else{
+                    document.bgColor="white";
+                    document.fgColor="black";
+                    document.f1.btn.value="Black";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1">
+            <h1>Click the button</h1>
+            <input type="button" name="btn" value="Black" onclick="color()">
+        </form>
+    </body>
+</html>
