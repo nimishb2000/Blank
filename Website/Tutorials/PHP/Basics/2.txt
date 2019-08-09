@@ -1,0 +1,9 @@
+<?php
+    $txt1 = " PHP Example";
+    $txt2 = "for variables and text";
+    $x = 5;
+    $y = 4;
+    echo "<h2>" . $txt1 . "</h2>";
+    echo " PHP echo example " . $txt2 . "<br>";
+    echo $x + $y;
+?>

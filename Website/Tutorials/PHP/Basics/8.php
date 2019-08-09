@@ -1,0 +1,8 @@
+<?php
+$a="Hello";
+$b=" World";
+$c=$a.$b;
+echo $c."<br>";
+$a.=$b;
+echo $a;
+?>

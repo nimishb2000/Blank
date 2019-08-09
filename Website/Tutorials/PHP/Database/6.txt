@@ -1,0 +1,7 @@
+$sql="update t1 set name='xyz' where user_no=1;";
+if(mysqli_query($conn, $sql)){
+    echo "Record updated successfully";
+}
+else{
+    echo "There was an error: ".mysqli_error($conn);
+}
