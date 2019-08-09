@@ -1,0 +1,5 @@
+$file=fopen("abc.txt", r);
+$a=fread($file, 10);
+echo $a;
+$b=fread($file, filesize($file));
+echo $b;
