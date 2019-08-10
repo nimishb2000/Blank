@@ -92,7 +92,7 @@
                         <td class="x6"><input type="text" class="x11" name="t1" placeholder="Email"></td>
                         <td></td><td></td>
                         <td class="x6"><input type="password" class="x11" name="t2" placeholder="Password"></td>
-                        <td class="x7"><input type="submit" class="x4" value="Log In" name="bt1" formaction="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>"></td>
+                        <td class="x7"><input type="submit" class="x4" value="Log In" name="bt1" formaction="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"></td>
                     </tr>
                 </table>
             </div>
@@ -111,7 +111,7 @@
                 <span class="x12"><input type="radio" name="gender" value="Male">Male</span> &nbsp; &nbsp; &nbsp; &nbsp;
                 <span class="x12"><input type="radio" name="gender" value="Female">Female</span>
                 <br><br>
-                <input type="submit" name="bt2" value="Create Account" class="x13" formaction="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
+                <input type="submit" name="bt2" value="Create Account" class="x13" formaction="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
             </div>
         </form>
     </body>
